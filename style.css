@@ -1,0 +1,132 @@
+@import url("http://fonts.cdnfonts.com/css/ttvtechprecomput-2");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "TTVTechPrecomput", sans-serif;
+  transition: background 0.2s cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .scheme {
+    background-color: #181a1b;
+  }
+
+  .score {
+    color: #fafafa;
+  }
+
+  .start-screen {
+    color: #fafafa;
+  }
+
+  img {
+    filter: invert(1);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .scheme {
+    background-color: #fafafa;
+  }
+
+  .score {
+    color: #131313;
+  }
+
+  .start-screen {
+    color: #131313;
+  }
+}
+
+.world {
+  overflow: hidden;
+  position: relative;
+}
+
+.score-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  right: 6vmin;
+  top: 1vmin;
+}
+
+.score {
+  font-size: 5vmin;
+  min-width: 14vmin;
+  text-align: right;
+}
+
+.high-score {
+  right: 8vmin;
+}
+
+.start-screen {
+  position: absolute;
+  font-size: 4vmin;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+}
+
+.hide {
+  display: none;
+}
+
+.ground {
+  --left: 0;
+
+  position: absolute;
+  width: 300%;
+  bottom: 0;
+  left: calc(var(--left) * 1%);
+}
+
+.dino {
+  --bottom: 0;
+
+  position: absolute;
+  left: 1%;
+  height: 30%;
+  bottom: calc(var(--bottom) * 1%);
+  /* background-color: red; */
+}
+
+.cactus {
+  --height: 30;
+
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: calc(var(--height) * 1%);
+  bottom: 0;
+}
+
+.cloud {
+  --top: 0;
+
+  position: absolute;
+  top: calc(var(--top) * 1%);
+  left: calc(var(--left) * 1%);
+  height: calc(var(--height) * 1%);
+  z-index: -1;
+}
+
+.bird {
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 20%;
+  bottom: 8vmin;
+}
